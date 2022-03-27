@@ -1,0 +1,91 @@
+
+on:
+  push:
+    branches:
+      - main
+
+# Environment variables available to all jobs and steps in this workflow
+env:
+  GITHUB_SHA: ${{ github.sha }}
+  IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
+  IBM_CLOUD_REGION: us-south
+  ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
+  REGISTRY_HOSTNAME: us.icr.io
+  IMAGE_NAME: iks-test
+  IKS_CLUSTER: example-iks-cluster-name-or-id
+  DEPLOYMENT_NAME: iks-test
+  PORT: 5001
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+ 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+ 
+<body>
+    <div class="container">
+        <form id="contact" action="" method="">
+            <h2>İletişim Sayfası</h2>
+            <div class="form-control">
+                <input placeholder="Adınız Soyadınız" type="text" required autofocus>
+            </div>
+            <div class="form-control">
+                <input placeholder="E-Posta Adresiniz" type="email" required>
+            </div>
+            <div class="form-control">
+                <input placeholder="Konu" type="text" required>
+            </div>
+            <div class="form-control">
+                <textarea placeholder="Lütfen Mesajınızı Buraya Yazın.." required></textarea>
+            </div>
+            <div class="form-control">
+                <button name="submit" type="submit" id="submit">GÖNDER</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+ 
+
